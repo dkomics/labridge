@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Labridge{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/landing.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/product_list.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/product_detail.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/order_history.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/add_to_cart.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/cart_detail.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/checkout.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="navbar-left">
+            {% if user.is_authenticated %}
+                <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="nav-link" style="background:none; border:none; padding:0; margin:0; cursor:pointer; color: inherit;">Logout</button>
+                </form>
+            {% else %}
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-link" href="{% url 'register' %}">Register</a>
+            {% endif %}
+        </div>
+        <div class="navbar-center">
+            <a href="{% url 'landing_page' %}">
+                <img src="{% static 'labridge_app/images/home_icon.png' %}" alt="Home">
+            </a>
+        </div>
+        <div class="navbar-left">
+            <button onclick="goBack()" class="back-button">Back</button>
+        </div>
+        
+    </nav>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        {% comment %} <p>Social Media:
+            <a href="https://x.com/dkomics">
+                <img src="{% static 'labridge_app/images/twitter.png' %}" alt="X" class="social-media">
+            </a>
+            <a href="https://www.linkedin.com/in/dkuchaka/">
+                <img src="{% static 'labridge_app/images/linkedin.png' %}" alt="LinkedIn" class="social-media">
+            </a>
+            <a href="https://github.com/dkomics">
+                <img src="{% static 'labridge_app/images/github.png' %}" alt="GitHub" class="social-media">
+            </a>
+        </p> {% endcomment %}
+        <p>&copy; 2024 Davis Kuchaka</p>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+/* static/labridge_app/css/base.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    background-color: #333;
+}
+
+.navbar-left {
+    position: absolute;
+    left: 10px;
+}
+
+.navbar-center {
+    text-align: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+/* .social-media img {
+    width: 1cm;
+    height: 1cm;
+    margin: 0 5px;
+} */
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+button.nav-link {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    outline: inherit;
+}
