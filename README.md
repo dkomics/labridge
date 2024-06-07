@@ -1,0 +1,2 @@
+# labridge
+A Django project 
