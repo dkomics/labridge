@@ -1,24 +1,24 @@
 # views.py
 from http.client import HTTPResponse
 from tkinter import Canvas
-from django.shortcuts import render, get_object_or_404, redirect # type: ignore
-from django.contrib.auth.decorators import login_required # type: ignore
-from django.core.mail import send_mail # type: ignore
-from django.template.loader import render_to_string # type: ignore
-from django.utils.html import strip_tags # type: ignore
-from django.conf import settings # type: ignore
+from django.shortcuts import render, get_object_or_404, redirect 
+from django.contrib.auth.decorators import login_required 
+from django.core.mail import send_mail 
+from django.template.loader import render_to_string 
+from django.utils.html import strip_tags 
+from django.conf import settings 
 
-from django.shortcuts import render, get_object_or_404, redirect # type: ignore
-from django.core.files.storage import FileSystemStorage # type: ignore
+from django.shortcuts import render, get_object_or_404, redirect 
+from django.core.files.storage import FileSystemStorage 
 from io import BytesIO
-from reportlab.lib.pagesizes import letter # type: ignore
-from reportlab.pdfgen import canvas # type: ignore
+from reportlab.lib.pagesizes import letter 
+from reportlab.pdfgen import canvas 
 
 from .models import Category, Product, Order, OrderItem
 
-from django.contrib.auth.forms import UserCreationForm # type: ignore
-from django.contrib.auth import login as auth_login # type: ignore
-from django.contrib.auth.views import LoginView # type: ignore
+from django.contrib.auth.forms import UserCreationForm 
+from django.contrib.auth import login as auth_login 
+from django.contrib.auth.views import LoginView 
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'
@@ -103,11 +103,11 @@ def checkout(request):
     if request.method == 'POST':
         # Send order information to vendor's email
         # subject = f'New Order: #{order.id}'
-        # html_message = render_to_string('labridge_app/vendor_order_email.html', {'order': order}) # type: ignore
-        # plain_message = strip_tags(html_message) # type: ignore
+        # html_message = render_to_string('labridge_app/vendor_order_email.html', {'order': order}) 
+        # plain_message = strip_tags(html_message) 
         # from_email = settings.DEFAULT_FROM_EMAIL
         # to_email = 'pipettewise@gmail.com'  # Replace with vendor's email address
-        # send_mail(subject, plain_message, from_email, [to_email], html_message=html_message) # type: ignore
+        # send_mail(subject, plain_message, from_email, [to_email], html_message=html_message) 
 
         order.completed = True
         order.save()
@@ -134,7 +134,7 @@ def generate_order_summary_pdf(order):
     buffer = BytesIO()
 
     # Create a PDF document
-    pdf = Canvas.Canvas(buffer, pagesize=A4) # type: ignore
+    pdf = Canvas.Canvas(buffer, pagesize=A4) 
     pdf.drawString(100, 750, f'Order Summary: #{order.id}')
     # Add order details to the PDF
     # Example: pdf.drawString(100, 700, f'Customer: {order.customer}')
