@@ -24,17 +24,20 @@ body {
     text-align: center;
 }
 
+.navbar-center img {
+    width: 25px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border: none !important; /* Remove any border */
+    outline: none !important; /* Remove any outline if present */
+    box-shadow: none !important; /* Remove any box-shadow if present */
+}
+
 .nav-link {
     color: white;
     text-decoration: none;
     margin: 0 15px;
 }
 
-/* .social-media img {
-    width: 1cm;
-    height: 1cm;
-    margin: 0 5px;
-} */
 
 footer {
     text-align: center;
