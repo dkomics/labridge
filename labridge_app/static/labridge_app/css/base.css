@@ -1,4 +1,15 @@
 /* static/labridge_app/css/base.css */
+img {
+    /* Set the border property to none to remove the border */
+    border: none;
+
+    /* Set the outline property to none to remove the outline */
+    outline: none;
+
+    /* Set the box-shadow property to none to remove the box-shadow */
+    box-shadow: none;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
