@@ -16,6 +16,7 @@ Essential Consumables:
 Stock up on everything from lab coats to pipette tips, all designed to support your day-to-day operations.
 
 Reagents
+
 Access a variety of reagents for your experiments and research.
 
 High-Quality Reagents: Our selection of reagents is carefully curated to meet the highest standards of quality.
